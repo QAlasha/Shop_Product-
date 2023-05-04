@@ -30,20 +30,11 @@ class TestProducts:
         assert product.quantity == 1, 'осталось после покупки 333шт'
 
     def test_product_buy_more_than_available(self, product):
-        # TODO напишите проверки на метод buy,
-        #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
         with pytest.raises(ValueError):
             assert product.buy(2000)
 
 
 class TestCart:
-    """
-    TODO Напишите тесты на методы класса Cart
-        На каждый метод у вас должен получиться отдельный тест
-        На некоторые методы у вас может быть несколько тестов.
-        Например, негативные тесты, ожидающие ошибку (используйте pytest.raises, чтобы проверить это)
-    """
-
     def test_add_product(self, cart, product):
         assert len(cart.products) == 0, 'Проверка что корзина пустая'
         cart.add_product(product)
